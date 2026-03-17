@@ -1,0 +1,12 @@
+# Core vision and AI framework
+ultralytics>=8.0.0
+
+# Image processing and matrix math
+opencv-python
+numpy
+
+# Required for BoT-SORT / ByteTrack within Ultralytics
+lapx>=0.5.2
+filterpy
+
+yt-dlp

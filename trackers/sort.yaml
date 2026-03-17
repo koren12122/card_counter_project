@@ -1,0 +1,17 @@
+# Minimal SORT-like tracker (pure Kalman + Hungarian, no frills)
+# Fastest option — no GMC, no ReID, no second-stage matching
+
+tracker_type: botsort
+track_high_thresh: 0.3
+track_low_thresh: 0.3       # same as high → disables ByteTrack's two-stage matching
+new_track_thresh: 0.3
+track_buffer: 15
+match_thresh: 0.7
+fuse_score: False            # pure IoU matching, no score fusion
+gmc_method: none             # no camera motion compensation
+proximity_thresh: 0.5
+appearance_thresh: 0.25
+with_reid: False
+
+# Frame skipping — run OBB detector every Nth frame, redraw cached boxes otherwise
+detect_every_n: 3
