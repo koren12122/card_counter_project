@@ -18,9 +18,7 @@
 ## Demo
 
 <p align="center">
-  <video src="demo.mp4" width="720" autoplay loop muted>
-    Your browser does not support the video tag.
-  </video>
+  <img src="demo.gif" alt="Card Counter Demo" width="720">
 </p>
 
 > Cards are detected with oriented bounding boxes, classified by rank, and counted using the Hi-Lo system — all in real time.
@@ -169,6 +167,7 @@ card_counter/
 ├── main.py                  # Entry point — pipeline orchestration
 ├── debug_obb.py             # Standalone OBB viewer (no tracking)
 ├── requirements.txt
+├── demo.gif                 # Demo recording
 │
 ├── src/
 │   ├── config.py            # All thresholds, paths, and Hi-Lo values
@@ -182,14 +181,10 @@ card_counter/
 │   ├── detector.pt          # YOLOv8 OBB detection model
 │   └── classifier.pt        # YOLOv8 classification model
 │
-├── trackers/
-│   ├── bytetrack.yaml       # ByteTrack config
-│   ├── botsort.yaml         # BoT-SORT config
-│   └── sort.yaml            # SORT-like config
-│
-├── evaluation/              # Evaluation scripts and ground-truth data
-├── finetuning/              # Training notebooks for detector & classifier
-└── segmentation/            # Card segmentation pipeline (data generation)
+└── trackers/
+    ├── bytetrack.yaml       # ByteTrack config
+    ├── botsort.yaml         # BoT-SORT config
+    └── sort.yaml            # SORT-like config
 ```
 
 ---
