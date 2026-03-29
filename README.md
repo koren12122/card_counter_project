@@ -217,6 +217,18 @@ A positive True Count indicates a player advantage; negative favors the house.
 
 ---
 
+## Caveats & Future Work
+
+- **Detector accuracy is not optimal.** The OBB detection model was trained on a limited dataset and can miss cards or produce noisy bounding boxes under challenging lighting, heavy occlusion, or unusual card designs. Fine-tuning on a larger, more diverse dataset (varied backgrounds, lighting conditions, card brands) would significantly improve detection reliability.
+
+- **Classification depends on crop quality.** Because the classifier receives a perspective-warped crop from the detector's bounding box, any inaccuracy in the OBB directly degrades classification. Tighter, more accurate detections lead to better classification without touching the classifier at all.
+
+- **YOLO-Segmentation as an alternative.** Instance segmentation (e.g., YOLOv26-seg) could replace the OBB detector entirely — producing pixel-perfect card masks instead of rotated rectangles. This would yield cleaner crops and could potentially be faster since a single segmentation model might handle both detection and card-region extraction in one pass. However, the trade-off is **data annotation**: labeling polygon masks is significantly more labor-intensive than labeling oriented bounding boxes, making it harder to scale the training set.
+
+- **Track ID instability.** When a card's detection briefly drops out (confidence flicker, partial occlusion), the tracker may assign a new ID to the same physical card, causing it to be classified and counted again. Spatial deduplication or appearance-based re-identification could mitigate this.
+
+---
+
 ## License
 
 This project is for educational and research purposes.
