@@ -67,12 +67,13 @@ python card_tracker.py \
 
 ```
 card_counter/
-├── card_tracker.py       # Main pipeline
-├── weights/              # YOLO model weights
+├── main.py              # Main application entry point
+├── src/                 # Source code
+│   ├── card_tracker.py  # Main tracking pipeline
+│   ├── config.py        # Configuration settings
+│   └── ...
+├── weights/             # YOLO model weights
 │   ├── detector.pt      # OBB detection model
-│   └── med_cls.pt       # Card classification model
-├── trackers/            # Tracker configuration files
-├── utils/               # Utility functions
-├── raw/                 # Raw video/image data
-└── annotated/           # Annotated output images
+│   └── classifier.pt    # Card classification model
+└── trackers/            # Tracker configuration files
 ```

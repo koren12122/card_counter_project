@@ -5,6 +5,16 @@ datasets/diff_back_datasets/obb_dataset/raw/
 **/annotated_images/
 **/images/
 
+# Utility scripts and data folders
+utils/
+old_weights/
+52_cards/
+cls_dataset/
+datasets/
+evaluation/
+finetuning/
+segmentation/
+
 # Python
 .venv/
 venv/
