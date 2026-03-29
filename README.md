@@ -9,7 +9,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.12%2B-blue?logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/YOLO-v26-purple?logo=yolo&logoColor=white" alt="YOLO">
-  <img src="https://img.shields.io/badge/Apple%20Silicon-MPS-black?logo=apple&logoColor=white" alt="Apple Silicon">
   <img src="https://img.shields.io/badge/OpenCV-4.x-green?logo=opencv&logoColor=white" alt="OpenCV">
 </p>
 
