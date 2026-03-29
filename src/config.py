@@ -9,8 +9,8 @@ import os
 # ──────────────────────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-OBB_MODEL_PATH = os.path.join(SCRIPT_DIR, "weights", "nano_detector.pt")
-CLS_MODEL_PATH = os.path.join(SCRIPT_DIR, "weights", "best_mixup.pt")
+OBB_MODEL_PATH = os.path.join(SCRIPT_DIR, "weights", "detector.pt")
+CLS_MODEL_PATH = os.path.join(SCRIPT_DIR, "weights", "classifier.pt")
 
 TRACKER_DIR = os.path.join(SCRIPT_DIR, "trackers")
 TRACKER_CONFIGS = {
@@ -23,16 +23,16 @@ TRACKER_CONFIGS = {
 # Detection & Classification
 # ──────────────────────────────────────────────────────────────────────
 VOTE_FRAMES = 5
-MAX_VOTE_ATTEMPTS = 15
-CLS_WAIT_FRAMES   = 3
+MAX_VOTE_ATTEMPTS = 20
+CLS_WAIT_FRAMES   = 4
 
-OBB_CONF_THRESH = 0.65
-OBB_MIN_AREA    = 1000
+OBB_CONF_THRESH = 0.55
+OBB_MIN_AREA    = 2000
 OBB_MAX_AREA    = 200_000
 
-CLS_CONF_THRESH   = 0.7
-CLS_CONF_HIGH     = 0.90
-CONSENSUS_RATIO   = 0.6
+CLS_CONF_THRESH   = 0.81
+CLS_CONF_HIGH     = 0.95
+CONSENSUS_RATIO   = 0.75
 
 CLS_BATCH_SIZE      = 8
 CLS_BATCH_INTERVAL  = 0.1
