@@ -66,7 +66,6 @@ The pipeline runs three stages per frame:
 - **Async Batched Classification** — background thread with queue-based batching keeps the main loop fast
 - **Apple Silicon Native** — MPS acceleration out of the box, CPU fallback supported
 - **Threaded Camera Stream** — non-blocking webcam capture for consistent frame rates
-- **Built-in Recording** — save annotated output directly to `.mp4`
 
 ---
 
@@ -109,13 +108,6 @@ python main.py --source path/to/video.mp4
 python main.py --source webcam --count-cards
 ```
 
-### Record a demo
-
-```bash
-python main.py --source video.mp4 --count-cards --record demo.mp4
-```
-
----
 
 ## CLI Reference
 
@@ -127,7 +119,6 @@ python main.py --source video.mp4 --count-cards --record demo.mp4
 | `--count-cards` | off | Enable Hi-Lo card counting |
 | `--num-decks` | `6` | Number of decks in the shoe |
 | `--show-fps` | off | Display FPS counter overlay |
-| `--record` | — | Save annotated output to `.mp4` file |
 | `--obb-conf` | `0.55` | OBB detection confidence threshold |
 | `--cls-conf` | `0.81` | Classification confidence threshold |
 | `--consensus` | `0.75` | Weighted vote ratio needed to finalize a card |
@@ -143,7 +134,6 @@ python main.py \
   --count-cards \
   --num-decks 8 \
   --show-fps \
-  --record session.mp4 \
   --obb-conf 0.6 \
   --cls-conf 0.85
 ```
